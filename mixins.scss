@@ -1,3 +1,15 @@
+@mixin grid($columns, $margin) {
+  float: left;
+  background: #ce3d3d;
+  margin-right: $margin;
+  margin-bottom: $margin;
+  height: 150px;
+  width: ((100% - (($columns - 1) * $margin)) / $columns);
+  &:nth-child(#{$columns}n) {
+    margin-right: 0;
+  }
+}
+
 @mixin font ($twoColor: red, $fontW: bold) {
   font-size: $mainFontSize;
   font-weight: $fontW;
@@ -12,7 +24,7 @@
 @mixin link($link, $hoverColor, $activeColor, $visitedColor) {
   color: $link;
   &:hover {
-    color: $hoverColor;
+    color: darken($link, 20);
   }
   &:active {
     color: $activeColor;

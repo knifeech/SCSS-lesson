@@ -5,14 +5,30 @@
           box-sizing: border-box;
 }
 
+.grid {
+  float: left;
+  width: 100%;
+}
+.grid > div {
+  float: left;
+  background: #ce3d3d;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  height: 150px;
+  width: 24.25%;
+}
+.grid > div:nth-child(4n) {
+  margin-right: 0;
+}
+
 .a-psevdo {
   font-size: 68px;
   text-decoration: none;
   color: white;
-  color: black;
+  color: silver;
 }
 .a-psevdo:hover {
-  color: blue;
+  color: #8d8d8d;
 }
 .a-psevdo:active {
   color: green;
@@ -46,6 +62,7 @@
   font-weight: 400;
   font-family: "Arial", sans-serif;
   color: green;
+  width: 25%;
 }
 .ul li a {
   text-decoration: none;

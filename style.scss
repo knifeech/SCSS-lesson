@@ -7,11 +7,19 @@
   box-sizing: border-box;
 }
 
+.grid {
+  float: left;
+  width: 100%;
+  > div {
+    @include grid(4, 1%);
+  }
+}
+
 .a-psevdo {
   font-size: 68px;
   text-decoration: none;
   color: white;
-  @include link(black, blue, green, purple);
+  @include link(silver, blue, green, purple);
 }
 
 .block:not(.first) {
@@ -35,6 +43,7 @@
   list-style: none;
   li {
     @include font(green, 400);
+    width: (100% / 4);
     a {
       text-decoration: none;
       color: black;
