@@ -18,8 +18,23 @@
 .a-psevdo {
   font-size: 68px;
   text-decoration: none;
-  color: white;
   @include link(silver, blue, green, purple);
+}
+
+.header {
+  @include link(silver, blue, green, purple) {
+    background: #000;
+    &:visited {
+      color: purple;
+    }
+  }
+}
+
+@for $i from 24 to 29 {
+  .#{$someVar}-#{$i} {
+    width: 50px + $i;
+    height: 50px + $i;
+  }
 }
 
 .block:not(.first) {

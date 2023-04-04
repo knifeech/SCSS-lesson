@@ -1,10 +1,16 @@
 @mixin grid($columns, $margin) {
   float: left;
   background: #ce3d3d;
-  margin-right: $margin;
   margin-bottom: $margin;
   height: 150px;
-  width: ((100% - (($columns - 1) * $margin)) / $columns);
+  @if($columns >= 5) {
+    width: 100%;
+    margin-right: 0;
+  }
+  @else {
+    width: ((100% - (($columns - 1) * $margin)) / $columns);
+    margin-right: $margin;
+  }
   &:nth-child(#{$columns}n) {
     margin-right: 0;
   }
@@ -29,7 +35,5 @@
   &:active {
     color: $activeColor;
   }
-  &:visited {
-    color: $visitedColor;
-  }
+  @content;
 }
